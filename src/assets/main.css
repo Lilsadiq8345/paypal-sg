@@ -1,0 +1,199 @@
+/* PayPal font imports */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #2c2e2f;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    line-height: 1.3;
+    color: #2c2e2f;
+  }
+}
+
+@layer components {
+  /* PayPal specific component styles */
+  .paypal-gradient {
+    background: linear-gradient(135deg, #0070ba 0%, #003087 100%);
+  }
+
+  .paypal-gradient-reverse {
+    background: linear-gradient(135deg, #003087 0%, #0070ba 100%);
+  }
+
+  .paypal-shadow {
+    box-shadow: 0 2px 8px rgba(0, 112, 186, 0.1);
+  }
+
+  .paypal-shadow-lg {
+    box-shadow: 0 10px 25px rgba(0, 112, 186, 0.15);
+  }
+
+  .mega-menu {
+    background: white;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .paypal-button {
+    @apply bg-paypal-blue hover:bg-paypal-blue-dark text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5;
+  }
+
+  .paypal-button-outline {
+    @apply border-2 border-paypal-blue text-paypal-blue hover:bg-paypal-blue hover:text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-200;
+  }
+
+  .paypal-card {
+    @apply bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300;
+  }
+
+  .paypal-section-title {
+    @apply text-3xl lg:text-4xl xl:text-5xl font-normal leading-tight text-gray-900 mb-6;
+  }
+
+  .paypal-section-subtitle {
+    @apply text-xl text-gray-600 leading-relaxed;
+  }
+
+  .paypal-feature-icon {
+    @apply w-24 h-24 bg-paypal-gray-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300;
+  }
+
+  .paypal-trust-indicator {
+    @apply flex items-center text-sm text-gray-600;
+  }
+
+  .paypal-trust-indicator span {
+    @apply w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-2;
+  }
+
+  .paypal-trust-indicator span::before {
+    @apply text-white text-xs content-['✓'];
+  }
+}
+
+@layer utilities {
+  /* PayPal specific utility classes */
+  .text-paypal-primary {
+    color: #0070ba;
+  }
+
+  .text-paypal-secondary {
+    color: #003087;
+  }
+
+  .text-paypal-accent {
+    color: #ffc439;
+  }
+
+  .bg-paypal-primary {
+    background-color: #0070ba;
+  }
+
+  .bg-paypal-secondary {
+    background-color: #003087;
+  }
+
+  .bg-paypal-accent {
+    background-color: #ffc439;
+  }
+
+  .border-paypal-primary {
+    border-color: #0070ba;
+  }
+
+  .shadow-paypal {
+    box-shadow: 0 4px 6px -1px rgba(0, 112, 186, 0.1), 0 2px 4px -1px rgba(0, 112, 186, 0.06);
+  }
+}
+
+/* Smooth animations */
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.2s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Button hover effects */
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Focus states for accessibility */
+button:focus,
+a:focus {
+  outline: 2px solid #0070ba;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0070ba;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #003087;
+}
